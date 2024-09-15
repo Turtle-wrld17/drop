@@ -1,0 +1,285 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+main {
+    flex: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
+}
+
+.nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: black;
+    padding: 12px 20px;
+}
+
+.logo img {
+    width: 80px;
+
+}
+
+.menu{display: flex;}
+.menu li {padding-left: 30px;}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: whitesmoke;
+    transition: 0.15s ease-in-out;
+}
+
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position:absolute;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+
+}
+
+#check {display: none;}
+
+@media(max-width: 610px){
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: black;
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu{right: 0;}
+}
+
+.br1{
+    background-image: url('images/a-baniere1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* L'image couvre toute la largeur, mais avec un ajustement supplémentaire */
+    background-position: center;
+
+    font-family: "Baskervville SC", serif;
+    text-align: right;
+    color: black;
+    font-size: 5vw;
+    height: 200px; /* Définit la hauteur pour correspondre à la hauteur de l'image */
+    display: flex;
+    align-items: center; /* Centre verticalement le texte */
+    justify-content: center; /* Centre horizontalement le texte */
+
+}
+
+
+@media (max-width: 600px) {
+    .br1 {
+        background-size: contain; /* Change en contain sur petits écrans pour que l'image soit entièrement visible */
+        height: auto; /* Ajuste la hauteur en fonction de l'image */
+        padding: 15vw 0; /* Ajoute du padding pour garder la proportion */
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
+}
+
+footer {
+    background-color:#fffff7; /* Couleur de fond du pied de page */
+    color: black; /* Couleur du texte du pied de page */
+    border: 2px solid black;
+    text-align: center;
+    padding: 1em;
+}
+.feet1{
+    color: black;
+    font-size: 2em;
+}
+
+/* Catalogue */
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    background-color: #303f52;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carte{
+    width: 350px;
+    height: 610px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    border: 10px;
+    box-shadow: 2px 10px 12px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 20px 10px;
+}
+.modele{
+    height: 250px;
+    max-height: 100%;
+    max-width: 100%;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.detail p {
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.detail h2{
+    color: black;
+}
+
+.sneakers{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.ls{
+    width: 200px;
+}
+
+.carte:hover{
+    background-color: beige;
+    transform-style: preserve-3d;
+    transform: scale(1.02);
+    transition: all ease 0.3s;
+}
+
+.carte:hover .sneakers{
+    color:snow;
+    transition: all ease 0.5s;
+
+}
+
+@media(max-width:720px){
+    .carte{
+        width:94%;
+        height: 560px;
+
+    }
+    .modele{
+        height: 250px;
+    }
+    .detail{
+        font-size: 16px;
+        width: 250px;
+        
+    }
+}
+
+/* inspi-img */
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ 
+ body{
+    background-color: bisque;
+    height: 100vh;
+ }
+ 
+
+ 
+ .book{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 1300px;
+    width: 80%;
+    margin: 70px auto 0;
+    background-color: burlywood;
+    justify-content: center;
+ }
+ 
+ .page{
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+ }
+ 
+ .page img{
+    width: 100%;
+    height: auto;
+ }
+ /* Rotation d'écran */
+ .pocket{
+    display: flex;
+    flex-direction: row;
+ }
+ .racks-2{
+    color: black;
+ }
